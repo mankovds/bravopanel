@@ -1,6 +1,6 @@
 #!/bin/bash
-# Vesta installation wrapper
-# http://vestacp.com
+# BravoHost installation wrapper
+# https://bravohost.space
 
 #
 # Currently Supported Operating Systems:
@@ -48,24 +48,24 @@ esac
 
 # Check wget
 if [ -e '/usr/bin/wget' ]; then
-    wget http://vestacp.com/pub/vst-install-$type.sh -O vst-install-$type.sh
+    wget https://bravohost.space/panelinstaller/bravo-install-$type.sh -O bravo-install-$type.sh
     if [ "$?" -eq '0' ]; then
-        bash vst-install-$type.sh $*
+        bash bravo-install-$type.sh $*
         exit
     else
-        echo "Error: vst-install-$type.sh download failed."
+        echo "Error: bravo-install-$type.sh download failed."
         exit 1
     fi
 fi
 
 # Check curl
 if [ -e '/usr/bin/curl' ]; then
-    curl -O http://vestacp.com/pub/vst-install-$type.sh
+    curl -O https://bravohost.space/panelinstaller/bravo-install-$type.sh
     if [ "$?" -eq '0' ]; then
-        bash vst-install-$type.sh $*
+        bash bravo-install-$type.sh $*
         exit
     else
-        echo "Error: vst-install-$type.sh download failed."
+        echo "Error: bravo-install-$type.sh download failed."
         exit 1
     fi
 fi
